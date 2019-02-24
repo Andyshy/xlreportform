@@ -1,14 +1,14 @@
 # -*- coding:utf-8 -*-
-__author__ = "Andy Yang"
 from win32com.client import Dispatch
+__author__ = "Andy Yang"
 
 
 class Application:
     """create excel application"""
     def __init__(self, visible=False):
-        self.app = Dispatch('Excel.Application')
-        self.app.Visible = visible
-        self.app.DisplayAlerts = False
+        self._app = Dispatch('Excel.Application')
+        self._app.Visible = visible
+        self._app.DisplayAlerts = False
 
     def __repr__(self):
         """repr(Application)"""
@@ -16,7 +16,7 @@ class Application:
 
     def __del__(self):
         """quit excel application when process finished"""
-        self.app.Quit()
+        self._app.Quit()
 
 
 if __name__ == '__main__':
