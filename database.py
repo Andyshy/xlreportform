@@ -14,6 +14,7 @@ class Database(metaclass=ABCMeta):
     def execute(self):
         pass
 
+
 class MysqlClient(Database):
     def connect(self):
         print('okokoconne')
@@ -21,6 +22,13 @@ class MysqlClient(Database):
     def execute(self, condition=None):
         print('execute')
 
+
+class SqlServerClient(Database):
+    def connect(self):
+        print('okokoconne')
+
+    def execute(self, condition=None):
+        print('execute')
 
 
 if __name__ == '__main__':
